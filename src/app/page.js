@@ -12,6 +12,7 @@ import ScrollProgressIndicator from "./components/ui/ScrollProgressIndicator";
 import Header from "./components/layout/Header";
 import ContactSection from "./components/sections/ContactSection";
 import PlansSection from "./components/sections/PlansSection";
+import OurOfferingsSection from "./components/sections/OurOfferingsSection";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <main className="overflow-hidden">
           <HeroSection />
           <TownSquareSection />
+          <OurOfferingsSection/>
           <LocationSection />
           <FacilitiesSection />
           <LifestyleSection />

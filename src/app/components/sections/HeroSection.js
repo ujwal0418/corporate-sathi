@@ -73,7 +73,7 @@ export default function HeroSection() {
           /> */}
         </motion.div>
 
-        <motion.button
+        {/* <motion.button
           onClick={toggleTheme}
           className="p-3 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors duration-200"
           aria-label="Toggle Dark Mode"
@@ -84,7 +84,7 @@ export default function HeroSection() {
           whileTap={{ scale: 0.95 }}
         >
           {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
-        </motion.button>
+        </motion.button> */}
       </div>
 
       {/* Background Image with gradient overlay */}

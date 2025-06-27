@@ -118,3 +118,4 @@ section > div {
 .btn-secondary {
   @apply bg-transparent border border-white/20 hover:border-white/40 text-white font-medium py-3 px-6 rounded transition duration-300;
 }
+
