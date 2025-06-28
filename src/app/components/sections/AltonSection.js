@@ -112,6 +112,7 @@ export default function AltonSection() {
                   height={120}
                   className="max-h-12 w-auto object-contain"
                 />
+                
               </motion.div>
             ))}
           </motion.div>

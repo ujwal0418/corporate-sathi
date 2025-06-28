@@ -59,27 +59,27 @@ export default function LifestyleSection() {
               {
                 title: "Brand Installations",
                 description: "Visual brand storytelling through creative builds.",
-                image: "/assets/brand-installation.jpg",
+                image: "/brand-installation.jpg",
               },
               {
                 title: "Gala Nights",
                 description: "Luxury evenings with high-impact ambiance and flow.",
-                image: "/assets/gala-event.jpg",
+                image: "/gala-event.jpg",
               },
               {
                 title: "Retail Activations",
                 description: "Product-driven engagement at malls and stores.",
-                image: "/assets/retail-activation.jpg",
+                image: "/retail-activation.jpg",
               },
               {
                 title: "Festive Experiences",
                 description: "Seasonal themes and décor that spark joy.",
-                image: "/assets/festival-decor.jpg",
+                image: "/festival-decor.jpg",
               },
               {
                 title: "Stage Shows",
                 description: "Entertainment that elevates your brand’s voice.",
-                image: "/assets/stage-show.jpg",
+                image: "/stage-show.jpg",
               },
             ].map((block, i) => (
               <motion.div
@@ -95,6 +95,7 @@ export default function LifestyleSection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end p-6">
                   <div className="text-white">
                     <h3 className="text-xl md:text-2xl font-bold mb-2">

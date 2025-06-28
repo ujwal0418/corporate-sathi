@@ -22,13 +22,13 @@ export default function HomePage() {
       <main className="overflow-hidden">
           <HeroSection />
           <TownSquareSection />
-          <OurOfferingsSection/>
-          <LocationSection />
-          <FacilitiesSection />
-          <LifestyleSection />
-          <AltonSection />
           <DesignSection />
+          <OurOfferingsSection/>
+          <LifestyleSection />
+          <FacilitiesSection />
           <PlansSection />
+          <AltonSection />
+          <LocationSection />
           <ContactSection/>
       </main>
       {/* <Footer /> */}

@@ -101,7 +101,7 @@ export default function FacilitiesSection() {
                 className="bg-white dark:bg-white/5 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                 variants={itemVariants}
               >
-                <div className="h-32 flex items-center justify-center bg-brand/10 dark:bg-white/10 text-brand dark:text-white">
+                <div className="h-32 flex items-center justify-center bg-brand/10 dark:bg-white/10 text-brand dark:text-brand">
                   {service.icon}
                 </div>
                 <div className="p-6">
