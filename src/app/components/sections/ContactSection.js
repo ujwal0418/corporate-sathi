@@ -1,29 +1,47 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaUserAlt, FaPhone, FaEnvelope, FaCalendarAlt, FaClock, FaCheck } from "react-icons/fa";
+import { FaCheck, FaSpinner } from "react-icons/fa";
 import SectionBackground from "../ui/SectionBackground";
 
 export default function ContactSection() {
-  const [tab, setTab] = useState("register");
   const [submitted, setSubmitted] = useState(false);
-  const [scheduled, setScheduled] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [callForm, setCallForm] = useState({ name: "", email: "", phone: "", date: "", time: "" });
 
-  const handleInput = (e, setter) =>
-    setter((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleInput = (e) =>
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-  };
-
-  const handleSchedule = (e) => {
-    e.preventDefault();
-    setScheduled(true);
-    setTimeout(() => setScheduled(false), 4000);
+    setLoading(true);
+    setError("");
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+      
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "", message: "" });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      setError(err.message);
+      setTimeout(() => setError(""), 5000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const fade = {
@@ -39,113 +57,68 @@ export default function ContactSection() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}>
           <h2 className="section-title text-center mb-8 w-full">Get in Touch<div className="section-title-underline" /></h2>
 
-          {/* Tabs */}
-          <div className="flex justify-center my-8 border-b border-white/10">
-            {["register", "schedule"].map((key) => (
-              <button
-                key={key}
-                onClick={() => setTab(key)}
-                className={`py-3 px-6 text-sm font-medium ${
-                  tab === key ? "text-white border-b-2 border-brand" : "text-gray-400 hover:text-white"
-                }`}
-              >
-                {key === "register" ? "Register Interest" : "Schedule a Call"}
-              </button>
-            ))}
-          </div>
-
-          {/* Tab Content */}
           <AnimatePresence mode="wait">
-            {tab === "register" && (
-              <motion.div key="register" variants={fade} initial="hidden" animate="visible" exit="exit">
-                {submitted ? (
-                  <div className="text-center bg-green-700/60 p-6 rounded-xl text-white">
-                    <FaCheck size={32} className="mx-auto mb-2" />
-                    <p className="text-lg font-semibold">Thank you! We'll be in touch shortly.</p>
+            <motion.div key="register" variants={fade} initial="hidden" animate="visible" exit="exit">
+              {submitted ? (
+                <div className="max-w-2xl mx-auto section-card border border-brand p-8 rounded-xl text-center mt-4">
+                  <div className="bg-green-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FaCheck size={24} className="text-green-500" />
                   </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="grid gap-6 max-w-2xl mx-auto">
-                    {["name", "email", "phone"].map((field) => (
-                      <div key={field}>
-                        <label className="block mb-1 capitalize">{field} *</label>
-                        <input
-                          name={field}
-                          value={form[field]}
-                          onChange={(e) => handleInput(e, setForm)}
-                          required
-                          className="form-input"
-                          placeholder={`Your ${field}`}
-                        />
-                      </div>
-                    ))}
-                    <div>
-                      <label className="block mb-1">Message</label>
-                      <textarea
-                        name="message"
-                        rows="4"
-                        value={form.message}
-                        onChange={(e) => handleInput(e, setForm)}
-                        className="form-input"
-                        placeholder="Tell us what you're looking for..."
+                  <h3 className="text-2xl font-bold mb-2 text-brand">Thank You!</h3>
+                  <p className="text-lg mb-4">Your message has been sent successfully.</p>
+                  <p className="text-sm opacity-80">
+                    We'll get back to you as soon as possible.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="grid gap-6 max-w-2xl mx-auto section-card p-8 rounded-xl mt-8">
+                  {error && (
+                    <div className="bg-red-500/20 border border-red-500/30 p-4 rounded-lg text-center mt-4">
+                      <p className="text-red-400">{error}</p>
+                    </div>
+                  )}
+                  
+                  {["name", "email", "phone"].map((field) => (
+                    <div key={field}>
+                      <label className="block mb-1 capitalize font-medium">{field} *</label>
+                      <input
+                        name={field}
+                        type={field === "email" ? "email" : "text"}
+                        value={form[field]}
+                        onChange={handleInput}
+                        required
+                        className="w-full p-3 bg-white/5 border border-white/10 rounded-lg focus:border-brand focus:ring-1 focus:ring-brand outline-none transition"
+                        placeholder={`Your ${field}`}
+                        disabled={loading}
                       />
                     </div>
-                    <button type="submit" className="btn-primary">Submit</button>
-                  </form>
-                )}
-              </motion.div>
-            )}
-
-            {tab === "schedule" && (
-              <motion.div key="schedule" variants={fade} initial="hidden" animate="visible" exit="exit">
-                {scheduled ? (
-                  <div className="text-center bg-green-700/60 p-6 rounded-xl text-white">
-                    <FaCheck size={32} className="mx-auto mb-2" />
-                    <p className="text-lg font-semibold">Call scheduled successfully!</p>
+                  ))}
+                  <div>
+                    <label className="block mb-1 font-medium">Message</label>
+                    <textarea
+                      name="message"
+                      rows="4"
+                      value={form.message}
+                      onChange={handleInput}
+                      className="w-full p-3 bg-white/5 border border-white/10 rounded-lg focus:border-brand focus:ring-1 focus:ring-brand outline-none transition"
+                      placeholder="Tell us what you're looking for..."
+                      disabled={loading}
+                    />
                   </div>
-                ) : (
-                  <form onSubmit={handleSchedule} className="grid gap-6 max-w-2xl mx-auto">
-                    {["name", "email", "phone"].map((field) => (
-                      <div key={field}>
-                        <label className="block mb-1 capitalize">{field} *</label>
-                        <input
-                          name={field}
-                          value={callForm[field]}
-                          onChange={(e) => handleInput(e, setCallForm)}
-                          required
-                          className="form-input"
-                          placeholder={`Your ${field}`}
-                        />
-                      </div>
-                    ))}
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block mb-1">Preferred Date *</label>
-                        <input
-                          type="date"
-                          name="date"
-                          value={callForm.date}
-                          onChange={(e) => handleInput(e, setCallForm)}
-                          required
-                          className="form-input"
-                        />
-                      </div>
-                      <div>
-                        <label className="block mb-1">Preferred Time *</label>
-                        <input
-                          type="time"
-                          name="time"
-                          value={callForm.time}
-                          onChange={(e) => handleInput(e, setCallForm)}
-                          required
-                          className="form-input"
-                        />
-                      </div>
-                    </div>
-                    <button type="submit" className="btn-primary">Schedule Call</button>
-                  </form>
-                )}
-              </motion.div>
-            )}
+                  <button 
+                    type="submit" 
+                    className="bg-brand hover:bg-brand-hover text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 mt-2 flex items-center justify-center"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <>
+                        <FaSpinner className="animate-spin mr-2" /> Sending...
+                      </>
+                    ) : "Submit"}
+                  </button>
+                </form>
+              )}
+            </motion.div>
           </AnimatePresence>
         </motion.div>
       </div>

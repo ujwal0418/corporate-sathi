@@ -105,14 +105,15 @@ section > div {
 /* ============================
    📝 Forms & Buttons
    ============================ */
+/* ============================
+   🔘 Form Elements
+   ============================ */
 .form-input {
-  @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)] focus:border-transparent;
-  color: var(--foreground);
+  @apply w-full p-3 bg-white/5 border border-white/10 rounded-lg focus:border-brand focus:ring-1 focus:ring-brand outline-none transition;
 }
 
 .btn-primary {
-  background-color: var(--brand);
-  @apply hover:bg-[color:var(--brand-hover)] text-white font-medium py-3 px-6 rounded transition duration-300;
+  @apply bg-brand hover:bg-brand-hover text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 mt-2;
 }
 
 .btn-secondary {
