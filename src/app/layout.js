@@ -10,8 +10,8 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata = {
-  title: 'ALTON by NSHAMA - Town Square Dubai',
-  description: 'Modern 1, 2 & 3 Bedroom Apartments with 50/50 Payment Plan | Handover May 2028',
+  title: 'Corporate-साथी - Premium Event Management Services',
+  description: 'India\'s leading corporate event management company with in-house production and pan-India reach. Trusted by top brands for exceptional event experiences.',
 };
 
 export default function RootLayout({ children }) {

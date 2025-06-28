@@ -59,32 +59,24 @@ export default function HeroSection() {
       {/* Header with Logo and Theme Toggle */}
       <div className="w-full px-4 md:w-[90vw] max-w-6xl mx-auto z-50 py-6 flex justify-between items-center">
         <motion.div
-          className="w-32 md:w-40"
+          className="w-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          {/* <Image
-            src={"/assets/ush_logo.svg"} // Replace with your logo path
-            alt="Corporate-saathi logo"
-            width={160}
-            height={70}
-            className="w-28 h-auto"
-          /> */}
+          <div className="flex items-center">
+            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
+              <span className="text-white font-playfair">Corporate</span>
+              <span className="text-[#A88941] font-bold">-साथी</span>
+            </h1>
+            <div className="h-6 w-1 bg-[#A88941] mx-3 hidden md:block"></div>
+            <p className="text-xs md:text-sm text-white/70 hidden md:block tracking-widest uppercase">
+              Event Management
+            </p>
+          </div>
         </motion.div>
-
-        {/* <motion.button
-          onClick={toggleTheme}
-          className="p-3 rounded-full bg-white/10 backdrop-blur-md text-white hover:bg-white/20 transition-colors duration-200"
-          aria-label="Toggle Dark Mode"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
-        </motion.button> */}
+        
+        {/* Theme toggle button removed */}
       </div>
 
       {/* Background Image with gradient overlay */}

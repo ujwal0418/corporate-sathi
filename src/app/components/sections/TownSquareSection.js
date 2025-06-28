@@ -153,6 +153,7 @@ export default function TownSquareSection() {
                     fill
                     className="object-cover rounded-xl"
                   />
+                  <div className="absolute inset-0 bg-black/30" />
                 </div>
                 <motion.div
                   className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-brand p-4 md:p-6 shadow-xl rounded-lg text-white"
