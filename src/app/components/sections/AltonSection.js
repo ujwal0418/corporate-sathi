@@ -24,7 +24,6 @@ const clientLogos = [
   // Add or remove files as needed
 ];
 
-
 export default function AltonSection() {
   const sectionRef = useRef(null);
 
@@ -102,7 +101,7 @@ export default function AltonSection() {
             {clientLogos.map((logo, index) => (
               <motion.div
                 key={index}
-                className="flex items-center justify-center p-4 bg-black/5 dark:bg-white rounded-xl shadow-sm hover:shadow-md transition-all"
+                className="relative flex items-center justify-center p-4 bg-black/5 dark:bg-white rounded-xl shadow-sm hover:shadow-md transition-all"
                 variants={itemVariants}
               >
                 <Image
@@ -112,11 +111,13 @@ export default function AltonSection() {
                   height={120}
                   className="max-h-12 w-auto object-contain"
                 />
-                
+                <span className="absolute top-1 right-2 text-xs text-gray-500 font-bold">
+                  *
+                </span>
               </motion.div>
             ))}
           </motion.div>
-
+          {/* 
           <motion.div className="mt-12 text-center" variants={itemVariants}>
             <a
               href="#plans"
@@ -124,8 +125,16 @@ export default function AltonSection() {
             >
               View Projects
             </a>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
+
+        <motion.p
+          className="text-xs text-gray-500 mt-4 text-center italic"
+          variants={itemVariants}
+        >
+          * These are our aspiring clients and represent brands we aim to
+          collaborate with. This is a representation only.
+        </motion.p>
       </div>
     </section>
   );
