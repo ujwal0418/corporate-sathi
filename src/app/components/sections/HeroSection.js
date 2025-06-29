@@ -57,7 +57,7 @@ export default function HeroSection() {
       ref={heroRef}
     >
       {/* Header with Logo and Theme Toggle */}
-      <div className="w-full px-4 md:w-[90vw]  mx-auto z-50 py-6 flex justify-between items-center">
+      <div className="w-full px-4 md:w-[90vw]  mx-auto z-50 py-1 flex justify-between items-center">
         <motion.div
           className="w-auto"
           initial={{ opacity: 0 }}
@@ -143,7 +143,7 @@ export default function HeroSection() {
 
       {/* Premium Scroll Indicator */}
       <motion.div
-        className="absolute bottom-10 md:bottom-14 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute hidden lg:block  bottom-10 md:bottom-14 left-1/2 transform -translate-x-1/2 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
