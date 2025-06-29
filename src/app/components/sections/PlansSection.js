@@ -249,7 +249,7 @@ const projects = [
     client: "Honeywell (MYKA EXP)",
     title: "Sales Kick-Off Meet",
     category: "Corporate Event",
-    image: "/projects/honeywell-goa.jpg",
+    image: "/projects/honeywell-goa2.jpg",
     description:
       "Global sales meet at Goa & Hua Hin (Thailand) for Honeywell.",
   },
@@ -411,20 +411,20 @@ const projects = [
       "Pharma expo stall at India Expo Mart, Greater Noida.",
   },
   {
+    client: "Honeywell",
+    title: "Sales Kick-Off Meet",
+    category: "Corporate Event",
+    image: "/projects/honeywell-goa.jpg",
+    description:
+      "Sales meet and activation in Goa & Hua Hin (Thailand) for Honeywell.",
+  },
+  {
     client: "Mac Cosmetics",
     title: "Mall Display & Makeup Station",
     category: "Retail",
     image: "/projects/mac.jpg",
     description:
       "Mock grocery store and live makeup demo at Select City Walk Mall.",
-  },
-  {
-    client: "Honeywell",
-    title: "Sales Kick-Off Meet",
-    category: "Corporate Event",
-    image: "/projects/honeywell.jpg",
-    description:
-      "Sales meet and activation in Goa & Hua Hin (Thailand) for Honeywell.",
   },
 ];
 
