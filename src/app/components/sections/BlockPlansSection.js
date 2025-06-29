@@ -84,7 +84,7 @@ export default function BlockPlansSection() {
 
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 py-16 md:py-20 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}

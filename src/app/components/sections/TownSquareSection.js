@@ -54,7 +54,7 @@ export default function TownSquareSection() {
 
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 py-16 md:py-20 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -68,7 +68,7 @@ export default function TownSquareSection() {
               Our Credo
               <div className="section-title-underline"></div>
             </h2>
-            <p className="section-subtitle dark:text-gray-300 text-gray-700 text-sm md:text-base px-2">
+            <p className="section-subtitle  dark:text-gray-300 text-gray-700  px-2">
               A strong foundation of seamless & flawless backend operations
             </p>
           </motion.div>
@@ -79,15 +79,17 @@ export default function TownSquareSection() {
                 className="md:w-1/2 w-full mb-10 md:mb-0 md:pr-12"
                 variants={itemVariants}
               >
-                <p className="text-base md:text-lg mb-6 text-gray-700 dark:text-gray-300">
-                  At Corporate-साथी, we empower our clients by providing a
+                <p className="text-base md:text-lg mb-6 text-gray-700 dark:text-gray-300 font-sans">
+                  At Corporate<span className="text-[#A88941] font-bold">–साथी</span>, we empower our clients by providing a
                   rock-solid backbone of event infrastructure, flawless
                   execution, and operational excellence. We are not just a
                   service provider — we’re a partner in every activation.
                 </p>
-                <p className="text-base md:text-lg mb-6 text-gray-700 dark:text-gray-300">
+                <p className="text-base md:text-lg mb-6 text-gray-700 dark:text-gray-300 font-sans">
                   Our mission is to deliver seamless backend operations and
-                  precise execution to ensure guaranteed success across corporate events, exhibitions, BTL activations, and themed setups.
+                  precise execution to ensure guaranteed success across
+                  corporate events, exhibitions, BTL activations, and themed
+                  setups.
                 </p>
 
                 <div className="grid grid-cols-2 gap-3 md:gap-4 mt-6 md:mt-8">

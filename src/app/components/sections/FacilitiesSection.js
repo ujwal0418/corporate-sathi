@@ -38,12 +38,14 @@ export default function FacilitiesSection() {
   const services = [
     {
       title: "Corporate Events",
-      description: "Seamlessly planned high-impact corporate gatherings and celebrations.",
+      description:
+        "Seamlessly planned high-impact corporate gatherings and celebrations.",
       icon: <FaBriefcase size={40} />,
     },
     {
       title: "Exhibition Setup",
-      description: "End-to-end execution for exhibition booths, brand zones, and expos.",
+      description:
+        "End-to-end execution for exhibition booths, brand zones, and expos.",
       icon: <FaStore size={40} />,
     },
     {
@@ -58,12 +60,14 @@ export default function FacilitiesSection() {
     },
     {
       title: "Mall Décor",
-      description: "Stunning seasonal and branded décor across India’s top malls.",
+      description:
+        "Stunning seasonal and branded décor across India’s top malls.",
       icon: <FaLandmark size={40} />,
     },
     {
       title: "BTL Activations",
-      description: "Brand-focused experiences at ground level for real audience impact.",
+      description:
+        "Brand-focused experiences at ground level for real audience impact.",
       icon: <FaBullhorn size={40} />,
     },
   ];
@@ -78,7 +82,7 @@ export default function FacilitiesSection() {
 
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 py-20 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -94,7 +98,7 @@ export default function FacilitiesSection() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-sans">
             {services.map((service, index) => (
               <motion.div
                 key={index}

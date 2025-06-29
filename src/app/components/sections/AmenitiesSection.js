@@ -5,6 +5,7 @@ import Image from 'next/image';
 export default function AmenitiesSection() {
   const amenitiesRef = useRef(null);
   
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

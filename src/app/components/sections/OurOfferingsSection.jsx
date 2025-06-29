@@ -73,7 +73,7 @@ export default function OurOfferingsSection() {
       <SectionBackground position="bottom" />
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 py-20 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -93,7 +93,7 @@ export default function OurOfferingsSection() {
             {offerings.map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-6 shadow hover:shadow-md transition-all duration-300 text-center"
+                className="bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl p-6 shadow hover:shadow-md transition-all duration-300 text-center font-sans"
                 variants={itemVariants}
               >
                 <div className="mb-4 text-brand">{item.icon}</div>

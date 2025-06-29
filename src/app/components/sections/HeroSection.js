@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -57,25 +57,22 @@ export default function HeroSection() {
       ref={heroRef}
     >
       {/* Header with Logo and Theme Toggle */}
-      <div className="w-full px-4 md:w-[90vw] max-w-6xl mx-auto z-50 py-6 flex justify-between items-center">
+      <div className="w-full px-4 md:w-[90vw]  mx-auto z-50 py-6 flex justify-between items-center">
         <motion.div
           className="w-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="flex items-center">
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
-              <span className="text-white font-playfair">Corporate</span>
-              <span className="text-[#A88941] font-bold">-साथी</span>
-            </h1>
-            <div className="h-6 w-1 bg-[#A88941] mx-3 hidden md:block"></div>
-            <p className="text-xs md:text-sm text-white/70 hidden md:block tracking-widest uppercase">
-              Event Management
-            </p>
+          <div className="h-12 md:h-14 w-auto">
+            <img
+              src="/logo.svg"
+              alt="CorporateSathi Logo"
+              className="h-full w-auto"
+            />
           </div>
         </motion.div>
-        
+
         {/* Theme toggle button removed */}
       </div>
 
@@ -94,7 +91,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
@@ -103,7 +100,9 @@ export default function HeroSection() {
             className="text-4xl md:text-6xl font-bold mb-4 text-white leading-tight"
             variants={itemVariants}
           >
-            Corporate-साथी
+            Planning Today,{" "}
+            <span className="text-[#A88941]">Leading Tomorrow.</span>
+            <br />
           </motion.h1>
 
           <motion.div
@@ -112,12 +111,13 @@ export default function HeroSection() {
           ></motion.div>
 
           <motion.p
-            className="text-lg md:text-2xl mb-8 text-gray-300 font-light max-w-3xl"
+            className="text-lg md:text-2xl mb-8 text-gray-300 font-light font-sans max-w-3xl"
             variants={itemVariants}
           >
             “I knew, of course, that trees and plants had stems, bark, branches,
             and foliage that reached up toward the light. But I was coming to
-            realize that the real magician was Light itself.”<br />– Edward Steichen
+            realize that the real magician was Light itself.”
+            <br />– Edward Steichen
           </motion.p>
 
           <motion.div className="flex flex-wrap gap-4" variants={itemVariants}>
@@ -141,37 +141,39 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-     {/* Premium Scroll Indicator */}
-<motion.div
-  className="absolute bottom-10 md:bottom-14 left-1/2 transform -translate-x-1/2 z-10"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 1.2, duration: 0.6 }}
->
-  <a href="#town-square" className="group relative flex flex-col items-center space-y-2">
-    {/* Outer Ring */}
-    <div className="h-14 w-14 rounded-full border-2 border-white/30 group-hover:border-white/60 transition-all duration-300 flex items-center justify-center">
-      {/* Pulsing Dot */}
+      {/* Premium Scroll Indicator */}
       <motion.div
-        className="h-2.5 w-2.5 bg-white rounded-full shadow-md"
-        animate={{
-          y: [0, 6, 0],
-          opacity: [1, 0.4, 1],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: 1.5,
-          ease: "easeInOut",
-        }}
-      />
-    </div>
-    {/* Label */}
-    <span className="text-xs text-white/50 group-hover:text-white tracking-wide">
-      Scroll
-    </span>
-  </a>
-</motion.div>
-
+        className="absolute bottom-10 md:bottom-14 left-1/2 transform -translate-x-1/2 z-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
+        <a
+          href="#town-square"
+          className="group relative flex flex-col items-center space-y-2"
+        >
+          {/* Outer Ring */}
+          <div className="h-14 w-14 rounded-full border-2 border-white/30 group-hover:border-white/60 transition-all duration-300 flex items-center justify-center">
+            {/* Pulsing Dot */}
+            <motion.div
+              className="h-2.5 w-2.5 bg-white rounded-full shadow-md"
+              animate={{
+                y: [0, 6, 0],
+                opacity: [1, 0.4, 1],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            />
+          </div>
+          {/* Label */}
+          <span className="text-xs text-white/50 group-hover:text-white tracking-wide">
+            Scroll
+          </span>
+        </a>
+      </motion.div>
     </section>
   );
 }

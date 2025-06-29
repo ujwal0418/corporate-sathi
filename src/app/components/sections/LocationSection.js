@@ -54,7 +54,7 @@ export default function DifferentiatorsSection() {
       id="differentiators"
       className="bg-white dark:bg-black text-black dark:text-white py-20"
     >
-      <div className="w-[100vw] md:w-[90vw] max-w-6xl mx-auto px-4">
+      <div className="w-[100vw] md:w-[90vw]  mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="section-title">
             What Sets Us Apart
@@ -69,7 +69,7 @@ export default function DifferentiatorsSection() {
           {differentiators.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white/5 dark:bg-white/10 p-6 md:p-8 rounded-xl backdrop-blur-lg shadow-xl hover:shadow-2xl transition"
+              className="bg-white/5 dark:bg-white/10 p-6 md:p-8 rounded-xl backdrop-blur-lg shadow-xl hover:shadow-2xl transition font-sans"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}

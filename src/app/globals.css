@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* ============================
    🌞 Light Theme (Default)
    ============================ */
@@ -77,9 +79,10 @@ section > div {
 }
 
 .section-subtitle {
-  @apply text-lg max-w-2xl mx-auto mt-6;
+  @apply text-lg  mx-auto mt-6;
   color: var(--foreground);
   opacity: 0.7;
+  font-family: sans-serif
 }
 
 /* ============================

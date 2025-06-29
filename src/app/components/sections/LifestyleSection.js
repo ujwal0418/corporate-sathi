@@ -38,7 +38,7 @@ export default function LifestyleSection() {
 
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 py-20 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -50,7 +50,8 @@ export default function LifestyleSection() {
               <div className="section-title-underline"></div>
             </h2>
             <p className="section-subtitle">
-              From concept to creation, we deliver immersive environments that resonate.
+              From concept to creation, we deliver immersive environments that
+              resonate.
             </p>
           </motion.div>
 
@@ -58,12 +59,14 @@ export default function LifestyleSection() {
             {[
               {
                 title: "Brand Installations",
-                description: "Visual brand storytelling through creative builds.",
+                description:
+                  "Visual brand storytelling through creative builds.",
                 image: "/brand-installation.jpg",
               },
               {
                 title: "Gala Nights",
-                description: "Luxury evenings with high-impact ambiance and flow.",
+                description:
+                  "Luxury evenings with high-impact ambiance and flow.",
                 image: "/gala-event.jpg",
               },
               {
@@ -85,7 +88,9 @@ export default function LifestyleSection() {
               <motion.div
                 key={i}
                 className={`${
-                  i === 0 ? "col-span-12 md:col-span-8" : "col-span-12 md:col-span-4"
+                  i === 0
+                    ? "col-span-12 md:col-span-8"
+                    : "col-span-12 md:col-span-4"
                 } relative h-[300px] md:h-[400px] group overflow-hidden rounded-xl`}
                 variants={itemVariants}
               >
@@ -95,20 +100,20 @@ export default function LifestyleSection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/30 " />
                 <div className="absolute inset-0 bg-black bg-opacity-30 flex items-end p-6">
                   <div className="text-white">
-                    <h3 className="text-xl md:text-2xl font-bold mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold mb-2 font-sans">
                       {block.title}
                     </h3>
-                    <p className="text-sm md:text-base max-w-md">{block.description}</p>
+                    <p className="text-sm md:text-base max-w-md font-sans">
+                      {block.description}
+                    </p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          
         </motion.div>
       </div>
     </section>

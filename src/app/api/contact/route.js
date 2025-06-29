@@ -5,93 +5,62 @@ export async function POST(request) {
   try {
     const data = await request.json();
     const { name, email, phone, message } = data;
-    
-    // Validate form data
+
     if (!name || !email || !phone) {
       return NextResponse.json(
-        { error: 'Name, email and phone are required' },
+        { error: 'Name, email, and phone are required' },
         { status: 400 }
       );
     }
 
-    // Create a test account if no SMTP credentials provided
-    // This is useful for development/testing
-    let testAccount;
-    let transporter;
-    
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      testAccount = await nodemailer.createTestAccount();
-      
-      transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        secure: false,
-        auth: {
-          user: testAccount.user,
-          pass: testAccount.pass,
-        },
-      });
-    } else {
-      // Use provided SMTP credentials
-      transporter = nodemailer.createTransport({
-        service: process.env.EMAIL_SERVICE || 'gmail',
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS,
-        },
-      });
-    }
+    // Setup transporter using GoDaddy SMTP
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST, // e.g. mail.corporatesathi.com or smtp.zoho.in
+      port: Number(process.env.SMTP_PORT) || 465, // typically 465 for SSL or 587 for TLS
+      secure: true, // true for port 465, false for 587
+      auth: {
+        user: process.env.SMTP_USER, // e.g. info@corporatesathi.com
+        pass: process.env.SMTP_PASS,
+      },
+    });
 
-    // Email content
-    const mailOptions = {
-      from: `"Contact Form" <${process.env.EMAIL_USER || testAccount.user}>`,
-      to: 'ujwal.raina.ur@gmail.com',
+    // 1️⃣ Send notification to your own email
+    const adminMailOptions = {
+      from: `"CorporateSathi Website" <${process.env.SMTP_USER}>`,
+      to: 'info@corporatesathi.com',
       subject: 'New Contact Form Submission',
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone}
-        Message: ${message || 'No message provided'}
-      `,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333;">New Contact Form Submission</h2>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Name:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;">${name}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Email:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;">${email}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold;">Phone:</td>
-              <td style="padding: 8px; border-bottom: 1px solid #eee;">${phone}</td>
-            </tr>
-            <tr>
-              <td style="padding: 8px; font-weight: bold;">Message:</td>
-              <td style="padding: 8px;">${message || 'No message provided'}</td>
-            </tr>
-          </table>
+          <h2>New Contact Form Submission</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Message:</strong> ${message || 'No message provided'}</p>
         </div>
       `,
     };
+    await transporter.sendMail(adminMailOptions);
 
-    // Send email
-    const info = await transporter.sendMail(mailOptions);
-
-    // Log URL for ethereal emails (for testing)
-    if (testAccount) {
-      console.log('Test email URL: %s', nodemailer.getTestMessageUrl(info));
-    }
+    // 2️⃣ Send thank you email to the user
+    const thankYouMailOptions = {
+      from: `"CorporateSathi" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: 'Thank You for Contacting Us!',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #A88941;">Thank you, ${name}!</h2>
+          <p>We’ve received your message and our team will get back to you shortly.</p>
+          <p style="margin-top: 20px;">Best regards,<br/>Team CorporateSathi</p>
+          <hr style="margin-top: 30px; border: none; border-top: 1px solid #ddd;" />
+          <small>This is an automated message. Please do not reply.</small>
+        </div>
+      `,
+    };
+    await transporter.sendMail(thankYouMailOptions);
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error sending email:', error);
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
   }
 }

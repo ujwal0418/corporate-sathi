@@ -36,7 +36,7 @@ export default function DesignSection() {
 
       <div className="w-[100vw] md:w-[90vw] mx-auto px-4 py-20 relative z-10">
         <motion.div
-          className="max-w-6xl mx-auto"
+          className=" mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -57,12 +57,14 @@ export default function DesignSection() {
             variants={itemVariants}
           >
             {/* Text Block */}
-            <div className="space-y-6">
+            <div className="space-y-6 font-sans">
               <h3 className="text-2xl font-bold">Execution. Scale. Trust.</h3>
               <p className="dark:text-gray-300 text-gray-700">
                 With decades of combined experience and a rock-solid partner
-                network, Corporate-साथी brings dependable delivery to every brand
-                activation, exhibition setup, and corporate event.
+                network, Corporate
+                <span className="text-[#A88941] font-bold">–साथी  </span> 
+                brings dependable delivery to every brand activation, exhibition
+                setup, and corporate event.
               </p>
 
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">

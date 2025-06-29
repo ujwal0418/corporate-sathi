@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="350"
+  height="50"
+  viewBox="0 0 350 50"
+>
+  <text
+    x="0"
+    y="35"
+    font-size="32"
+    font-weight="700"
+    fontFamily="'Cormorant Garamond', serif"
+  >
+    <tspan fill="white">Corporate</tspan>
+    <tspan fill="#A88941">–साथी</tspan>
+  </text>
+</svg>

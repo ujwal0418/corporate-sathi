@@ -483,7 +483,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         {/* Filters (clickable now!) */}
-        <div className="relative z-10 flex flex-wrap justify-center gap-3 mb-10">
+        <div className="relative z-10 flex flex-wrap justify-center gap-3 mb-10 ">
           {filters.map((f) => (
             <motion.button
               key={f}
@@ -514,7 +514,7 @@ export default function ProjectsSection() {
           {visibleProjects.map((p, i) => (
             <motion.div
               key={i}
-              className="group bg-white dark:bg-white/5 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+              className="group bg-white dark:bg-white/5 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all font-sans"
               whileHover={{ y: -5 }}
             >
               <div className="relative h-56 overflow-hidden">
