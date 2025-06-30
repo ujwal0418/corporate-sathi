@@ -14,26 +14,19 @@ const projects = [
     description: "90 Years celebration setup at DS Group headquarters, Noida.",
   },
   {
-    client: "Clout Mobitech",
-    title: "Retail Chain Rollout",
-    category: "Retail",
-    image: "/projects/clout-mobitech.jpg",
-    description: "Stay Connect outlets launched across 10 cities in Rajasthan.",
-  },
-  {
     client: "Xiaomi",
     title: "LED Smart TV Retail Units",
     category: "Retail",
     image: "/projects/xiaomi-ncr.jpg",
     description: "Multi-store display installations across Delhi NCR.",
   },
-  {
-    client: "PVR / 7 Coffee Beans",
-    title: "Kiosk Setup",
-    category: "Retail",
-    image: "/projects/pvr-7coffee.jpg",
-    description: "Branded kiosks for 7 Coffee Beans in PVR multiplexes.",
-  },
+  // {
+  //   client: "PVR / 7 Coffee Beans",
+  //   title: "Kiosk Setup",
+  //   category: "Retail",
+  //   image: "/projects/pvr-7coffee.jpg",
+  //   description: "Branded kiosks for 7 Coffee Beans in PVR multiplexes.",
+  // },
   {
     client: "Iris International",
     title: "Airport Branding",
@@ -47,6 +40,13 @@ const projects = [
     category: "Corporate",
     image: "/projects/optum-fixtures.jpg",
     description: "Office activations in Gurgaon, Noida, Hyderabad & Bangalore.",
+  },
+   {
+    client: "Clout Mobitech",
+    title: "Retail Chain Rollout",
+    category: "Retail",
+    image: "/projects/clout-mobitech.jpg",
+    description: "Stay Connect outlets launched across 10 cities in Rajasthan.",
   },
 
   // 7–12
@@ -66,29 +66,29 @@ const projects = [
     description:
       "Interactive demo stations at HOT Store, Nehru Place, New Delhi.",
   },
-  {
-    client: "Lenovo (Retail Matrix)",
-    title: "Store Fabrication",
-    category: "Retail",
-    image: "/projects/lenovo-store.jpg",
-    description: "Modular store setups in Amritsar, Bareilly & Roorkee.",
-  },
-  {
-    client: "S. Oliver",
-    title: "Press Launch Setup",
-    category: "Fashion",
-    image: "/projects/soliver-launch.jpg",
-    description:
-      "Beach-house themed showroom for S. Oliver press launch in Delhi.",
-  },
-  {
-    client: "VLCC",
-    title: "Display Rack Installation",
-    category: "Wellness",
-    image: "/projects/vlcc-rack.jpg",
-    description:
-      "Custom display rack installations for VLCC retail spaces.",
-  },
+  // {
+  //   client: "Lenovo (Retail Matrix)",
+  //   title: "Store Fabrication",
+  //   category: "Retail",
+  //   image: "/projects/lenovo-store.jpg",
+  //   description: "Modular store setups in Amritsar, Bareilly & Roorkee.",
+  // },
+  // {
+  //   client: "S. Oliver",
+  //   title: "Press Launch Setup",
+  //   category: "Fashion",
+  //   image: "/projects/soliver-launch.jpg",
+  //   description:
+  //     "Beach-house themed showroom for S. Oliver press launch in Delhi.",
+  // },
+  // {
+  //   client: "VLCC",
+  //   title: "Display Rack Installation",
+  //   category: "Wellness",
+  //   image: "/projects/vlcc-rack.jpg",
+  //   description:
+  //     "Custom display rack installations for VLCC retail spaces.",
+  // },
   {
     client: "Schimmer Chemicals",
     title: "Expo Stall",
@@ -114,13 +114,13 @@ const projects = [
     description:
       "Experiential installation in Chandigarh reflecting global journeys.",
   },
-  {
-    client: "Oberoi Hotels (Ample Events)",
-    title: "GITB Stall",
-    category: "Exhibition",
-    image: "/projects/oberoi-gitb.jpg",
-    description: "Luxury travel stall at GITB, JECC Jaipur for Oberoi Hotels.",
-  },
+  // {
+  //   client: "Oberoi Hotels (Ample Events)",
+  //   title: "GITB Stall",
+  //   category: "Exhibition",
+  //   image: "/projects/oberoi-gitb.jpg",
+  //   description: "Luxury travel stall at GITB, JECC Jaipur for Oberoi Hotels.",
+  // },
   {
     client: "TIC (TATA Motors)",
     title: "Prima Truck Race",
@@ -169,22 +169,22 @@ const projects = [
     image: "/projects/woke-juice.jpg",
     description: "Pop-up juice bar at DLF Saket Mall for Woke Juice brand.",
   },
-  {
-    client: "Media Expo (Mimaki)",
-    title: "Exhibition Setup",
-    category: "Exhibition",
-    image: "/projects/media-expo.jpg",
-    description:
-      "Large-scale expo stall at Pragati Maidan for Media Expo 2015.",
-  },
-  {
-    client: "Burberry",
-    title: "Show Window",
-    category: "Retail",
-    image: "/projects/burberry-window.jpg",
-    description:
-      "Premium window displays in Delhi, Gurgaon, Hyderabad, Chennai & Bangalore.",
-  },
+  // {
+  //   client: "Media Expo (Mimaki)",
+  //   title: "Exhibition Setup",
+  //   category: "Exhibition",
+  //   image: "/projects/media-expo.jpg",
+  //   description:
+  //     "Large-scale expo stall at Pragati Maidan for Media Expo 2015.",
+  // },
+  // {
+  //   client: "Burberry",
+  //   title: "Show Window",
+  //   category: "Retail",
+  //   image: "/projects/burberry-window.jpg",
+  //   description:
+  //     "Premium window displays in Delhi, Gurgaon, Hyderabad, Chennai & Bangalore.",
+  // },
   {
     client: "Shandong Tai Kai",
     title: "Backlit Showcase",
@@ -235,14 +235,14 @@ const projects = [
     description:
       "Live makeup stations and mock grocery store display at Select City Walk.",
   },
-  {
-    client: "S. Oliver",
-    title: "Temporary Showroom",
-    category: "Fashion",
-    image: "/projects/soliver-showroom.jpg",
-    description:
-      "Media-guest beach-house themed temporary showroom at press launch.",
-  },
+  // {
+  //   client: "S. Oliver",
+  //   title: "Temporary Showroom",
+  //   category: "Fashion",
+  //   image: "/projects/soliver-showroom.jpg",
+  //   description:
+  //     "Media-guest beach-house themed temporary showroom at press launch.",
+  // },
 
   // 31–36
   {
@@ -268,30 +268,30 @@ const projects = [
     description:
       "New product launch at Hyatt Regency, New Delhi for Honda.",
   },
-  {
-    client: "Nestlé",
-    title: "Christmas Carnival",
-    category: "Event",
-    image: "/projects/nestle-carnival.jpg",
-    description:
-      "Festive carnival setup in Delhi for Nestlé Christmas events.",
-  },
-  {
-    client: "HSIL Benelave",
-    title: "Jaipur Installation",
-    category: "Retail",
-    image: "/projects/hsil-benelave.jpg",
-    description:
-      "Working rain-shower display in Jaipur for HSIL Benelave.",
-  },
-  {
-    client: "Chevrolet (Bellset)",
-    title: "Sail U-VA Launch",
-    category: "Auto",
-    image: "/projects/chevrolet-sail.jpg",
-    description:
-      "Vehicle launch activation at The Grand, New Delhi for Chevrolet Sail U-VA.",
-  },
+  // {
+  //   client: "Nestlé",
+  //   title: "Christmas Carnival",
+  //   category: "Event",
+  //   image: "/projects/nestle-carnival.jpg",
+  //   description:
+  //     "Festive carnival setup in Delhi for Nestlé Christmas events.",
+  // },
+  // {
+  //   client: "HSIL Benelave",
+  //   title: "Jaipur Installation",
+  //   category: "Retail",
+  //   image: "/projects/hsil-benelave.jpg",
+  //   description:
+  //     "Working rain-shower display in Jaipur for HSIL Benelave.",
+  // },
+  // {
+  //   client: "Chevrolet (Bellset)",
+  //   title: "Sail U-VA Launch",
+  //   category: "Auto",
+  //   image: "/projects/chevrolet-sail.jpg",
+  //   description:
+  //     "Vehicle launch activation at The Grand, New Delhi for Chevrolet Sail U-VA.",
+  // },
 
   // 37–42
   {
@@ -302,14 +302,14 @@ const projects = [
     description:
       "Corporate event activation in Delhi for Solutions Digitas.",
   },
-  {
-    client: "Dabur",
-    title: "Family Day",
-    category: "Event",
-    image: "/projects/dabur-family.jpg",
-    description:
-      "Mexican-theme family day for Dabur employees in Delhi (500 pax).",
-  },
+  // {
+  //   client: "Dabur",
+  //   title: "Family Day",
+  //   category: "Event",
+  //   image: "/projects/dabur-family.jpg",
+  //   description:
+  //     "Mexican-theme family day for Dabur employees in Delhi (500 pax).",
+  // },
   {
     client: "Fila India",
     title: "Press Launch",
@@ -318,14 +318,14 @@ const projects = [
     description:
       "Brand ambassador unveiling with motorized turntable (Virendra Sehwag).",
   },
-  {
-    client: "Cisco",
-    title: "Services Team Offsite",
-    category: "Corporate Event",
-    image: "/projects/cisco-goa.jpg",
-    description:
-      "Full guest management and production for Cisco offsite in Goa.",
-  },
+  // {
+  //   client: "Cisco",
+  //   title: "Services Team Offsite",
+  //   category: "Corporate Event",
+  //   image: "/projects/cisco-goa.jpg",
+  //   description:
+  //     "Full guest management and production for Cisco offsite in Goa.",
+  // },
   {
     client: "TOI Group",
     title: "Brand Equity Quiz",
@@ -334,32 +334,32 @@ const projects = [
     description:
       "Pan-India quiz in 9 cities culminating in Mumbai finale for TOI.",
   },
-  {
-    client: "BHPC",
-    title: "Polo Club Launch",
-    category: "Event",
-    image: "/projects/bhpc.jpg",
-    description:
-      "Beverly Hills Polo Club launch event setup in Mumbai.",
-  },
+  // {
+  //   client: "BHPC",
+  //   title: "Polo Club Launch",
+  //   category: "Event",
+  //   image: "/projects/bhpc.jpg",
+  //   description:
+  //     "Beverly Hills Polo Club launch event setup in Mumbai.",
+  // },
 
   // 43–48
-  {
-    client: "Voltas",
-    title: "Dealers Meet (Shenzhen)",
-    category: "Corporate Event",
-    image: "/projects/voltas-shenzhen.jpg",
-    description:
-      "Product reveal with rotating backdrops in Shenzhen for Voltas.",
-  },
-  {
-    client: "Voltas",
-    title: "Dealers Meet (Phuket)",
-    category: "Corporate Event",
-    image: "/projects/voltas-phuket.jpg",
-    description:
-      "Repeat of Shenzhen activation for Voltas dealers in Phuket.",
-  },
+  // {
+  //   client: "Voltas",
+  //   title: "Dealers Meet (Shenzhen)",
+  //   category: "Corporate Event",
+  //   image: "/projects/voltas-shenzhen.jpg",
+  //   description:
+  //     "Product reveal with rotating backdrops in Shenzhen for Voltas.",
+  // },
+  // {
+  //   client: "Voltas",
+  //   title: "Dealers Meet (Phuket)",
+  //   category: "Corporate Event",
+  //   image: "/projects/voltas-phuket.jpg",
+  //   description:
+  //     "Repeat of Shenzhen activation for Voltas dealers in Phuket.",
+  // },
   {
     client: "Modi Mundi Pharma",
     title: "Exhibition Setup",
@@ -368,22 +368,22 @@ const projects = [
     description:
       "Modular SS structure for multi-city pharma exhibitions across India.",
   },
-  {
-    client: "Cisco",
-    title: "Customer Meet (Dhaka)",
-    category: "Corporate Event",
-    image: "/projects/cisco-dhaka.jpg",
-    description:
-      "Conference-level execution for Cisco customer meet in Dhaka, Bangladesh.",
-  },
-  {
-    client: "HP India",
-    title: "Graphics Arts Showcase",
-    category: "Exhibition",
-    image: "/projects/hp-graphics.jpg",
-    description:
-      "HP Graphics Arts showcase stall design and execution in Delhi.",
-  },
+  // {
+  //   client: "Cisco",
+  //   title: "Customer Meet (Dhaka)",
+  //   category: "Corporate Event",
+  //   image: "/projects/cisco-dhaka.jpg",
+  //   description:
+  //     "Conference-level execution for Cisco customer meet in Dhaka, Bangladesh.",
+  // },
+  // {
+  //   client: "HP India",
+  //   title: "Graphics Arts Showcase",
+  //   category: "Exhibition",
+  //   image: "/projects/hp-graphics.jpg",
+  //   description:
+  //     "HP Graphics Arts showcase stall design and execution in Delhi.",
+  // },
   {
     client: "LG Electronics",
     title: "India Partners Meet",
@@ -394,14 +394,14 @@ const projects = [
   },
 
   // 49–54
-  {
-    client: "Ericsson India",
-    title: "Technical Meet",
-    category: "Corporate Event",
-    image: "/projects/ericsson.jpg",
-    description:
-      "Technical conference setup in Manesar for Ericsson India.",
-  },
+  // {
+  //   client: "Ericsson India",
+  //   title: "Technical Meet",
+  //   category: "Corporate Event",
+  //   image: "/projects/ericsson.jpg",
+  //   description:
+  //     "Technical conference setup in Manesar for Ericsson India.",
+  // },
   {
     client: "Alkem Pharma",
     title: "RSSDL Conference Stall",
