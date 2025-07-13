@@ -458,7 +458,7 @@ export default function ProjectsSection() {
 
   return (
     <section
-      id="projects"
+      id="plans"
       className="relative bg-white dark:bg-black text-black dark:text-white"
     >
       {/* make background non-interactive */}
